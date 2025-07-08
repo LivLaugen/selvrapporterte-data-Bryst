@@ -1,0 +1,200 @@
+archetype (adl_version=1.4; uid=b32327c1-65c8-4ea2-a720-cb4d90e02a7f)
+	openEHR-EHR-OBSERVATION.menstrual_status_kremt.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-03-19">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"036c2e36727cde49d082833eafb50414">
+		["build_uid"] = <"9d7470c6-c17c-3259-b38a-147bcc9ac319">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Menstrual status KREMT
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Menstrual status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0008,    -- Regular periods
+													at0009,    -- Irregular periods
+													at0010,    -- Absence of menstruation (amenorrhea)
+													at0011,    -- Uses hormone releasing intrauterine device contraception
+													at0012,    -- Pregnant
+													at0013]    -- Unknown
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0006] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Menstruasjonsstatus KREMT">
+					description = <"Verdier for menstruasjonsstatus som kreves av 
+Kreftregisterets Elektroniske Meldetjeneste KREMT.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Menstruasjonsstatus">
+					description = <"Verdier for menstruasjonsstatus som kreves av 
+Kreftregisterets Elektroniske Meldetjeneste KREMT.
+">
+				>
+				["at0008"] = <
+					text = <"Regelmessig">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Uregelmessig">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Opphør">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Hormonspiral">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Gravid">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Menstrual status KREMT">
+					description = <"Menstrual status values required by the Cancer Registry’s Electronic Reporting Service (KREMT).">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Menstrual status">
+					description = <"Menstrual status values required by the Cancer Registry’s Electronic Reporting Service (KREMT).">
+				>
+				["at0008"] = <
+					text = <"Regular periods">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Irregular periods">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Absence of menstruation (amenorrhea)">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Uses hormone releasing intrauterine device contraception">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Pregnant">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+			>
+		>
+	>
+	term_binding = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0008"] = <[SNOMED-CT::302757007]>
+				["at0009"] = <[SNOMED-CT::80182007]>
+				["at0010"] = <[SNOMED-CT::14302001]>
+				["at0011"] = <[SNOMED-CT::449038007]>
+				["at0012"] = <[SNOMED-CT::77386006]>
+				["at0013"] = <[SNOMED-CT::261665006]>
+			>
+		>
+	>
