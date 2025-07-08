@@ -1,0 +1,120 @@
+archetype (adl_version=1.4; uid=f95aeb60-7610-4020-a691-113a8d205e4c)
+	openEHR-EHR-CLUSTER.questionnaire_details_oophorectomy.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-03-26">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ae6ebe93d892c17263415afc5b335597">
+		["build_uid"] = <"7644339c-8bf7-3dad-8fca-9ab369408f17">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+	>
+
+definition
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- Questionnaire details on oophorectomy
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Which ovary(ies)?
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- left oophorectomy
+							at0003,    -- right oophorectomy
+							at0004]    -- bilateral oophorectomy
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Questionnaire details on oophorectomy">
+					description = <"questionnaire_details_oophorectomy">
+				>
+				["at0001"] = <
+					text = <"Which ovary(ies)?">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"left oophorectomy">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"right oophorectomy">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"bilateral oophorectomy">
+					description = <"">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Spørreskjemadetaljer om fjerning av eggstokk">
+					description = <"Spørreskjemadetaljer om fjerning av eggstokker">
+				>
+				["at0001"] = <
+					text = <"Hvilke(n) eggstokk?">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"venstre">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"høyre">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"begge">
+					description = <"">
+				>
+			>
+		>
+	>
+	term_binding = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0002"] = <[SNOMED-CT::429333003]>
+				["at0003"] = <[SNOMED-CT::427818008]>
+				["at0004"] = <[SNOMED-CT::391083006]>
+			>
+		>
+	>
